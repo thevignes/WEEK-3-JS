@@ -1,0 +1,102 @@
+ 
+<<<<JAVASCRIPT WEEK 3>>>>
+
+forEach
+When we use a for loop, we can execute each element once.
+
+The syntax is:
+
+javascript
+Copy code
+array.forEach(function(element, index, array) {
+  // code to execute for each element
+});
+Example:
+
+javascript
+Copy code
+const num = [1, 2, 3, 4, 5];
+num.forEach(function(num) {
+  console.log(num);
+});
+javascript
+Copy code
+const arr = [1, 5, 7, 9, 4, 3, 8, 2];
+arr.reverse();
+console.log(arr); // [2, 8, 3, 4, 9, 7, 5, 1]
+var, let, and const
+var: When using var, we can access those variables anywhere in the program. We can redeclare variables using var.
+let: When creating and assigning a variable with let, it is block-scoped. We cannot reinitialize let. It is hoisted in the Temporal Dead Zone (TDZ).
+const: When using const, we cannot reinitialize it later. const is constant, and we can't reinitialize the same variable with the same value.
+TDZ
+TDZ (Temporal Dead Zone) is the time between the instantiation and declaration of const and let. It will show a reference error when we run it in the TDZ.
+
+HOISTING
+Hoisting means that during the creation phase, JavaScript moves our functions and variables to the top. Variables declared with var are hoisted.
+
+JSON
+JSON (JavaScript Object Notation) is used for data representation in JavaScript. JSON data types include: Number, Boolean, String, Null, Array, and Object.
+
+FILTER
+When using filter, we should return the condition:
+
+
+const arr = [1, 2, 3, 3];
+const num = arr.filter(num => num * num);
+console.log(num);
+ARRAY .at()
+.at() is used to find elements by index:
+
+
+
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.at(2)); // 3
+ARRAY .concat()
+.concat() is used to merge elements:
+
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+console.log(arr1.concat(arr2)); // [1, 2, 3, 4, 5, 6]
+ARRAY .every()
+.every() checks if all elements in an array pass a test:
+
+
+
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.every(x => x > 0)); // true
+ARRAY .fill()
+.fill() changes all elements in an array to a static value:
+
+
+
+const arr = [1, 2, 3, 4, 5];
+arr.fill(0);
+console.log(arr); // [0, 0, 0, 0, 0]
+ARRAY .find()
+.find() returns the value of the first element that passes a test:
+
+
+
+const arr = [1, 2, 3, 4, 5];
+const found = arr.find(x => x > 3);
+console.log(found); // 4
+WHAT IS IIFE?
+IIFE (Immediately Invoked Function Expression) is a JavaScript function that executes immediately after being defined:
+
+
+
+(function(num) {
+  return num * num;
+})(5); // 25
+SHADOWING
+In JavaScript, shadowing means a local variable hides a global variable with the same name:
+
+
+
+var a = 10;
+function vig() {
+  console.log(a); // undefined
+  var a = 20;
+}
+vig();
